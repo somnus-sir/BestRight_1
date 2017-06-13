@@ -16,6 +16,9 @@ import com.example.administrator.bestright.R;
 
 /**
  * Created by Administrator on 2017/6/10 0010.
+ *
+ * 获取数据，填充数据到相应的位置。
+ *
  */
 
 public class F1_1_Recommend extends Fragment {
@@ -33,7 +36,6 @@ public class F1_1_Recommend extends Fragment {
     }
 
     class lvAdapter extends BaseAdapter{
-
         @Override
         public int getCount() {
             return 10;
@@ -56,8 +58,6 @@ public class F1_1_Recommend extends Fragment {
             }
             return convertView;
         }
-
-
     }
 
     public static class ViewHolder{
