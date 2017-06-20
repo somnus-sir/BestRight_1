@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,9 +30,6 @@ import com.example.administrator.bestright.R;
 
 /**
  * Created by Administrator on 2017/6/10 0010.
- * <p>
- * 替换为PullToRefreshListView
- *   存储当前page
  */
 
 public class F1_1_Recommend extends Fragment {
