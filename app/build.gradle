@@ -29,5 +29,8 @@ dependencies {
     compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
     compile 'com.android.support:design:23.2.0'
     compile project(path: ':pullToRefresh')
-
+    compile 'com.squareup.okhttp3:okhttp:3.5.0'
+    compile 'com.google.code.gson:gson:2.8.1'
+    compile 'com.facebook.fresco:fresco:0.12.0'
+    compile 'com.facebook.fresco:animated-gif:0.12.0'
 }
