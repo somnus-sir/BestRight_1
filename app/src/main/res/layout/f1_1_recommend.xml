@@ -9,17 +9,19 @@
         <!--android:text="test"/>-->
 
 
-    <ListView
-        android:id="@+id/lv_F11"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ListView>
-
-
-    <!--<com.handmark.pulltorefresh.library.PullToRefreshListView-->
-        <!--android:id="@+id/ptfListView"-->
-        <!--android:overScrollMode="never"-->
+    <!--<ListView-->
+        <!--android:id="@+id/lv_F11"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent">-->
-    <!--</com.handmark.pulltorefresh.library.PullToRefreshListView>-->
+    <!--</ListView>-->
+
+
+
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/ptfListView"
+        android:overScrollMode="never"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
 </LinearLayout>

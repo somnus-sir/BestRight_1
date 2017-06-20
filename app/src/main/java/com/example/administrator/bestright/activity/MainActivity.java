@@ -1,18 +1,21 @@
 package com.example.administrator.bestright.activity;
 
 import android.app.Activity;
+import android.os.Message;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.os.Handler;
 import android.widget.Toast;
 
 import com.example.administrator.bestright.R;
@@ -25,7 +28,7 @@ import com.readystatesoftware.systembartint.SystemBarTintManager;
  * RadioButton  默认选中问题
  */
 public class MainActivity extends AppCompatActivity {
-
+    private static boolean isExit = false;
     private RadioGroup rg;
     private FrameLayout llFragment;
     private FragmentFactory fragmentFactory;
@@ -34,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton rb3;
     private RadioButton rb4;
     private RadioButton rb5;
+    private static Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            isExit = false;
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +125,26 @@ public class MainActivity extends AppCompatActivity {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             //透明导航栏
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            exit();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    private void exit() {
+        if (!isExit) {
+            isExit = true;
+            Toast.makeText(getApplicationContext(), "再按一次后退键退出程序", Toast.LENGTH_SHORT).show();
+            // 利用handler延迟发送更改状态信息
+            mHandler.sendEmptyMessageDelayed(0, 2000);
+        } else {
+            this.finish();
         }
     }
 }

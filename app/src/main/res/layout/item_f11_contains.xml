@@ -15,18 +15,17 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
-            android:src="@mipmap/icon" />
+            android:src="@mipmap/icon1" />
 
         <TextView
-
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_centerVertical="true"
-            android:layout_margin="4dp"
+            android:layout_margin="6dp"
             android:textSize="14sp"
             android:layout_toRightOf="@+id/iv_f11_icon"
             android:gravity="center"
-            android:text="我抱不到你" />
+            android:text="帅帅的楠" />
 
         <ImageView
             android:layout_width="30dp"
@@ -38,6 +37,7 @@
     </RelativeLayout>
 
     <TextView
+        android:layout_marginTop="4dp"
         android:id="@+id/tv_f11_contents"
         android:layout_width="match_parent"
         android:layout_height="20dp"
@@ -73,7 +73,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:gravity="center_vertical"
-            android:text="魔域和章鱼都是利用神经中暑系统来感应周围环境伪装自己的，切断中暑神经系统就无法感应环境了，就露出了原色" />
+            android:text="这个位置是用来放神品的，因为现在没有数据来源，先将就着占个位置，以后有了服务器再将数据放上去吧。" />
     </RelativeLayout>
 
     <LinearLayout

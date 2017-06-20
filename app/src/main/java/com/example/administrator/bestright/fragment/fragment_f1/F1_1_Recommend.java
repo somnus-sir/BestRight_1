@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.administrator.bestright.bean.ReceivedInfo;
 import com.example.administrator.bestright.helper.HttpHelper;
+import com.example.administrator.bestright.utils.SPUtils;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -30,6 +31,7 @@ import com.example.administrator.bestright.R;
  * Created by Administrator on 2017/6/10 0010.
  * <p>
  * 替换为PullToRefreshListView
+ *   存储当前page
  */
 
 public class F1_1_Recommend extends Fragment {
@@ -40,22 +42,42 @@ public class F1_1_Recommend extends Fragment {
     public ReceivedInfo receivedInfo;
     private F1_1_Recommend.lvAdapter lvAdapter;
     private int page = 1;
+    private PullToRefreshListView plistView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.f1_1_recommend, container, false);
-        lv = (ListView) view.findViewById(R.id.lv_F11);
-//        tv = (TextView) view.findViewById(R.id.tv);
+        plistView = (PullToRefreshListView) view.findViewById(R.id.ptfListView);
         lvAdapter = new lvAdapter();
-        lv.setAdapter(lvAdapter);
+        plistView.setAdapter(lvAdapter);
         return view;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        //初始化数据
+        page = SPUtils.getInt(getContext(), "page_f1_1", 1);
+
+        //网络请求数据
         requestData();
+
+        //监听下拉上拉
+        plistView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
+            @Override
+            public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
+                page++;//更改条件
+                requestData();//重新请求数据
+                Toast.makeText(getContext(), "刷新成功", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
+
+
+            }
+        });
     }
 
     /**
@@ -77,12 +99,13 @@ public class F1_1_Recommend extends Fragment {
                 String url1 = receivedInfo.result.data.get(0).url;
 //                tv.setText(url1);
                 lvAdapter.notifyDataSetChanged();
-
+                plistView.onRefreshComplete();
             }
 
             @Override
             public void onFail(Exception e) {
                 e.printStackTrace();
+                plistView.onRefreshComplete();
                 Toast.makeText(getContext(), "网络异常", Toast.LENGTH_SHORT).show();
             }
         });
@@ -141,8 +164,6 @@ public class F1_1_Recommend extends Fragment {
                     .setAutoPlayAnimations(true)
                     .build();
             viewHolder.sdv.setController(controller);
-
-
             return convertView;
         }
     }
@@ -152,4 +173,9 @@ public class F1_1_Recommend extends Fragment {
         public SimpleDraweeView sdv;
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        SPUtils.putInt(getContext(),"page_f1_1",page);
+    }
 }
