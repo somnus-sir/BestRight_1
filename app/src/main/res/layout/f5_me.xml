@@ -1,12 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/tv_f1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEF3FA"
+    android:orientation="vertical">
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="30sp"
-        android:text="fragment5"/>
+        android:layout_height="300dp"
+        android:background="#fff">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/p_me_title5" />
+
+        <ImageView
+            android:id="@+id/iv_f5me_icon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="160dp"
+            android:src="@mipmap/icon1" />
+
+        <TextView
+            android:id="@+id/tv_f5me_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="176dp"
+            android:layout_toRightOf="@+id/iv_f5me_icon"
+            android:text="somnus"
+            android:textColor="#444"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_f5me_name"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/iv_f5me_icon"
+            android:text="这家伙很懒，什么也没写"
+            android:textSize="16sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="6dp">
+
+            <LinearLayout style="@style/F5_me_ll">
+
+                <TextView
+                    style="@style/F5_me_ll_item"
+                    android:text="0" />
+
+                <TextView
+                    style="@style/F5_me_ll_item2"
+                    android:text="帖子" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/F5_me_ll">
+
+                <TextView
+                    style="@style/F5_me_ll_item"
+                    android:text="0" />
+
+                <TextView
+                    style="@style/F5_me_ll_item2"
+                    android:text="获赞" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/F5_me_ll">
+
+                <TextView
+                    style="@style/F5_me_ll_item"
+                    android:text="0" />
+
+                <TextView
+                    style="@style/F5_me_ll_item2"
+                    android:text="关注" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/F5_me_ll">
+
+                <TextView
+                    style="@style/F5_me_ll_item"
+                    android:text="0" />
+
+                <TextView
+                    style="@style/F5_me_ll_item2"
+                    android:text="粉丝" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lv_f5me"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_weight="1"
+        android:background="#fff"></ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#fff">
+
+    </LinearLayout>
+
 
 </LinearLayout>

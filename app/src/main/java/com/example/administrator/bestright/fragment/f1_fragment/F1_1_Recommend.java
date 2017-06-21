@@ -1,12 +1,9 @@
-package com.example.administrator.bestright.fragment.fragment_f1;
+package com.example.administrator.bestright.fragment.f1_fragment;
 
 import android.net.Uri;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

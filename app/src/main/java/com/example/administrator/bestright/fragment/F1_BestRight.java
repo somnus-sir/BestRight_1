@@ -6,23 +6,14 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
-import android.widget.Adapter;
-import android.widget.BaseAdapter;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.administrator.bestright.R;
 import com.example.administrator.bestright.factory.FragmentFactory_F1;
-import com.example.administrator.bestright.fragment.fragment_f1.F1_1_Recommend;
-
-import java.util.zip.Inflater;
 
 /**
  * 移动后出现消失现象，以前好像遇到过

@@ -1,10 +1,8 @@
-package com.example.administrator.bestright.fragment.fragment_f1;
+package com.example.administrator.bestright.fragment.f1_fragment;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,15 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.administrator.bestright.R;
-import com.example.administrator.bestright.bean.ReceivedInfo;
 import com.example.administrator.bestright.bean.ReceivedInfo_f13;
 import com.example.administrator.bestright.helper.HttpHelper;
 import com.example.administrator.bestright.utils.SPUtils;
-import com.facebook.drawee.backends.pipeline.Fresco;
-import com.facebook.drawee.interfaces.DraweeController;
-import com.facebook.drawee.view.SimpleDraweeView;
-import com.facebook.imagepipeline.request.ImageRequest;
-import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
@@ -51,7 +43,7 @@ public class F1_3_ImageAText extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         //初始化数据
-        page = SPUtils.getInt(getContext(), "page_f1_1", 1);
+        page = SPUtils.getInt(getContext(), "page_f1_3", 1);
 
         //网络请求数据
         requestData();
@@ -146,5 +138,11 @@ public class F1_3_ImageAText extends Fragment {
 
     public static class ViewHolder {
         public TextView tvContent;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        SPUtils.putInt(getContext(),"page_f1_3",page);
     }
 }
