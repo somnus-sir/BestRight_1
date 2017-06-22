@@ -7,21 +7,30 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="360dp"
         android:background="#fff">
+
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="240dp"
             android:scaleType="fitXY"
             android:src="@mipmap/p_me_title5" />
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="20dp"
+            android:alpha="0.7"
+            android:src="@mipmap/p_me_settting3" />
 
         <ImageView
             android:id="@+id/iv_f5me_icon"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginLeft="14dp"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="200dp"
             android:src="@mipmap/icon1" />
 
         <TextView
@@ -29,11 +38,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="176dp"
+            android:layout_marginTop="212dp"
             android:layout_toRightOf="@+id/iv_f5me_icon"
             android:text="somnus"
             android:textColor="#444"
-            android:textSize="16sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -43,14 +52,14 @@
             android:layout_marginTop="8dp"
             android:layout_toRightOf="@+id/iv_f5me_icon"
             android:text="这家伙很懒，什么也没写"
-            android:textSize="16sp" />
+            android:textSize="18sp" />
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="6dp">
+            android:layout_marginBottom="16dp">
 
             <LinearLayout style="@style/F5_me_ll">
 
@@ -67,7 +76,7 @@
 
                 <TextView
                     style="@style/F5_me_ll_item"
-                    android:text="0" />
+                    android:text="144" />
 
                 <TextView
                     style="@style/F5_me_ll_item2"
@@ -89,7 +98,7 @@
 
                 <TextView
                     style="@style/F5_me_ll_item"
-                    android:text="0" />
+                    android:text="13412" />
 
                 <TextView
                     style="@style/F5_me_ll_item2"
@@ -104,9 +113,10 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="14dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="18dp"
         android:layout_weight="1"
-        android:background="#fff"></ListView>
+        android:background="#fff"
+        android:divider="@null"></ListView>
 
     <LinearLayout
         android:layout_width="match_parent"
